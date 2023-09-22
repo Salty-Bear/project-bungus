@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bungus-8c03a": {
+      "hosting": {
+        "bungus_Frontend": [
+          "bungus-8c03a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bungus-8c03a"
+  }
+}

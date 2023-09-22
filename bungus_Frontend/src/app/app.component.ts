@@ -15,6 +15,9 @@ export class AppComponent {
     this.accessToken.getToken().subscribe({
       next: (response: any) => {
         console.log(response);
+
+        localStorage.setItem('access_token', response.access_token);
+
       },
       error: (error: any) => {
         console.log(error);
