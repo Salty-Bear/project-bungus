@@ -1,5 +1,6 @@
 package com.backend.bungus.models;
 
+//It is the model of the response the app will get from SPOTIFY
 public class Token {
 
     private String access_token;

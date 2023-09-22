@@ -17,13 +17,17 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http.cors((cors)->cors.disable());
+
+        http.csrf((csrf )-> csrf.disable())
                 .authorizeHttpRequests((authorize)->authorize
                         .requestMatchers("/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement((session)->session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                );
+
         return http.build();
     }
 }
