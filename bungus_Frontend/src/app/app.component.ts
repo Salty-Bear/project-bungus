@@ -12,14 +12,14 @@ export class AppComponent {
   constructor(private accessToken: AccessTokenService) { }
 
   getToken() {
-    this.accessToken.getToken().subscribe(
-      (res: any) => {
-        console.log(res);
+    this.accessToken.getToken().subscribe({
+      next: (response: any) => {
+        console.log(response);
       },
-      (error: any) => {
+      error: (error: any) => {
         console.log(error);
       }
-    )
+    });
   }
 
 }
