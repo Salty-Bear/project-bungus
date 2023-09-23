@@ -19,6 +19,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+/* ###################################
+  angular material imports
+  ####################################
+  */
+
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +40,11 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
     DashboardComponent
   ],
   imports: [
+    MatCardModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
+    FlexLayoutModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -39,7 +57,8 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
     provideStorage(() => getStorage()),
     provideFunctions(() => getFunctions()),
     provideMessaging(() => getMessaging()),
-    provideRemoteConfig(() => getRemoteConfig())
+    provideRemoteConfig(() => getRemoteConfig()),
+    BrowserAnimationsModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,
