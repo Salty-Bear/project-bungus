@@ -9,7 +9,7 @@ import { BehaviorSubject} from 'rxjs'
 })
 export class AuthService {
 
-  constructor(private fireauth: AngularFireAuth,private router : Router) { }
+  constructor(private fireAuth: AngularFireAuth,private router : Router) { }
 
   isUserLoggedIn = new BehaviorSubject<boolean>(false)
 
@@ -18,7 +18,7 @@ export class AuthService {
  ############################################################ */
 
   googleSignIn(){
-    return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(
+    return this.fireAuth.signInWithPopup(new GoogleAuthProvider).then(
       res =>{
         this.router.navigate(['/dashboard'])
         localStorage.setItem('token',JSON.stringify(res.user?.uid))
@@ -36,11 +36,11 @@ export class AuthService {
  ############################################################ */
 
     githubSignIn(){
-      return this.fireauth.signInWithPopup(new GithubAuthProvider).then(
+      return this.fireAuth.signInWithPopup(new GithubAuthProvider).then(
         res => {
           this.router.navigate(['/dashboard'])
           localStorage.setItem('token',JSON.stringify(res.user?.uid))
-          
+
         },
         err =>{
           alert(err.message)
