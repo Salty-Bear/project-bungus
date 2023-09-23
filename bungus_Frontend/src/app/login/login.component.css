@@ -1,4 +1,4 @@
-mat-card{
+mat-card:first-child{
     background-color: black;
     width: 50%;
     height: 65%;
@@ -80,8 +80,7 @@ button{
   
 
 
-.googleico{
-    position: absolute;
+.googleico{position: absolute;
     padding-left: 5%;
     width: 15%;
 }
