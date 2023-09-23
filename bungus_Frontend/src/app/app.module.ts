@@ -16,6 +16,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage'
 
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { provideMessaging,getMessaging } from '@angular/fire/messaging';
+import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     providePerformance(() => getPerformance()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    provideFunctions(() => getFunctions()),
+    provideMessaging(() => getMessaging()),
+    provideRemoteConfig(() => getRemoteConfig())
   ],
   providers: [
     ScreenTrackingService,UserTrackingService,
