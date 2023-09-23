@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SpotifyController {
-
     @Autowired
     private SpotifyService spotifyService;
 

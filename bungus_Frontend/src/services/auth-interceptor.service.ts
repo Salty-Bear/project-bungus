@@ -1,5 +1,6 @@
-import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,19 @@ export class AuthInterceptorService implements HttpInterceptor {
     }
 
     const token = localStorage.getItem('token')!.replace(/"/g, ''); //removes double quotes from the start and end of the token
+    const modifiedReq = this.addToken(request, token);
 
-    const modifiedRequest = request.clone( { setHeaders: { Authorization: "Bearer " + token } } );
+    return next.handle(modifiedReq).pipe(
+      catchError(
+        (error: HttpErrorResponse) => {
+          console.log(error);
+          return throwError("Wrong");
+        }
+      )
+    )
+  }
 
-    return next.handle(modifiedRequest);
-
+  private addToken(request: HttpRequest<any>, token: String | null) {
+    return request.clone( {  headers: request.headers.append('Authorization', 'Bearer '+token) } );
   }
 }
