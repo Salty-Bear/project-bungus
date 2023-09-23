@@ -79,3 +79,19 @@ button{
   }
   
 
+
+.googleico{
+    position: absolute;
+    padding-left: 5%;
+    width: 15%;
+}
+.microsoftico{
+    position: absolute;
+    padding-top: 2%;
+    width: 20%;
+}
+.githubico{
+    width: 0;
+}
+
+
