@@ -1,0 +1,27 @@
+mat-card{
+    background-color: #61677A;
+    width: 50%;
+    height: 65%;
+    border-radius: 2%;
+}
+
+.header{
+    background-color: #272829; 
+    /* 272829 */
+    height: 13%;
+}
+
+.logoImg{
+    position: relative;
+    width: 4.5%;
+    padding: 1%;
+    border-radius: 25%;
+}
+
+.branding{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 1%;
+    padding-top: 2%;
+    font-style:italic
+}
