@@ -6,11 +6,14 @@ mat-card:first-child{
     border: 1px solid white;
 }
 
+
 .header{
     background-color: #181818; 
     /* 272829 */
     height: 13%;
 }
+
+
 
 .logoImg{
     position: relative;
@@ -34,7 +37,13 @@ mat-card:first-child{
     font-size: x-large;
     color: whitesmoke;
     padding: 1%;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
+}
+
+.contactus_Button{
+    margin-left: 50%;
+    margin-top: 1.5%;
+    width: 20%;
 }
 
 button{
@@ -94,3 +103,8 @@ button{
 }
 
 
+.creativeline{
+    text-align: center;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
