@@ -17,18 +17,18 @@ export class AuthService {
   Creating Sign in with google service for logging in
  ############################################################ */
 
-  googleSignIn(){
+  googleSignIn() {
     return this.fireAuth.signInWithPopup(new GoogleAuthProvider).then(
-      res =>{
+      (res: any) =>{
         this.router.navigate(['/dashboard'])
-        localStorage.setItem('token',JSON.stringify(res.user?.uid))
+        localStorage.setItem('token', res.credential?.idToken)
         this.isUserLoggedIn.next(true)
       },
       err =>{
         alert(err.message)
       }
-      )
-    }
+    )
+  }
 
 
 /* ############################################################

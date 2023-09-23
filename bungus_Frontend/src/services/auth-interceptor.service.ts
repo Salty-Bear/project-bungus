@@ -10,7 +10,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
 
-    if(request.headers.get("No-Auth") === "True" ) {
+    if(request.headers.get("No-Auth") === "True") {
       return next.handle(request);
     }
 
