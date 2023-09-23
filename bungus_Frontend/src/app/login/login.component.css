@@ -25,3 +25,10 @@ mat-card{
     padding-top: 2%;
     font-style:italic
 }
+
+
+.loginheader{
+    font-family: Mooli;
+    font-weight: 1000;
+    font-size: x-large;
+}
