@@ -10,6 +10,9 @@ import { AuthService } from 'src/services/auth.service';
 export class LoginComponent {
   constructor(private auth:AuthService){}
 
+  ngOnInit(){
+    this.auth.autologin()
+  }
 
   //Sign in with google function
   signInWithGoogle(){
