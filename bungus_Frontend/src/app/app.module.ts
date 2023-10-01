@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from 'src/environments/environment';
@@ -26,17 +26,18 @@ import { User } from 'src/model/user.model';
 /* ###################################
   angular material imports
   ####################################
-  */
+*/
 
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { AuthInterceptorService } from 'src/services/auth-interceptor.service';
 
 
 
 
- 
+
 
 
 @NgModule({
@@ -69,8 +70,7 @@ import {MatButtonModule} from '@angular/material/button';
   providers: [
     ScreenTrackingService,UserTrackingService,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
-    
-
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent]
 })

@@ -19,6 +19,7 @@ export class LoginComponent {
     this.auth.googleSignIn()
   }
 
+
   //Sign in with github function
   signInWithGit(){
     this.auth.githubSignIn()
